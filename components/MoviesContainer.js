@@ -13,12 +13,13 @@ const MoviesContainer = (props) => {
     
     return <div className="container-fluid">
         <div className="row">
-            <div className="col-lg-6 col-sm-6 order-2 order-lg-1">
-               {  movies.length > 0 && <MoviesList  /> }
+            <div className="col-8">
+               {  movies.length > 0 ? <MoviesList /> : <p> No movies found... </p> }
             </div>
-            <div className="col-lg-6 col-sm-6 order-1 order-lg-2">
+            <div className="col-4">
                 <MoviesForm />
-                { movies.length > 0 && <MovieStats /> }
+                <hr/>
+                { movies.length > 0 ? <MovieStats /> : <p> No movies found... </p> }
             </div>
         </div>
     </div>

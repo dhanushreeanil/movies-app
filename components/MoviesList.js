@@ -12,8 +12,8 @@ const MoviesList = (props) => {
 
     return (
         <div>
-            <MoviesSearch />
-            <MovieCard />
+            <div className=""> <MoviesSearch /></div>
+            <div className=""><MovieCard /></div>
         </div>
     )
 }

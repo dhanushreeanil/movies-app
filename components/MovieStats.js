@@ -18,9 +18,9 @@ const MovieStats = (props) => {
 
     return (
         <div>
-            <h2> Movie Stats </h2>
-            <h3> Total Movies - { movies.length } </h3>
-            <h4> # { topMovie.title.toUpperCase() } </h4>
+            <h3> Movie Stats </h3>
+            <h5 className="text-muted"> Total Movies - { movies.length } </h5>
+            <h5> # { topMovie.title.toUpperCase() } </h5>
         </div>
     )
 }

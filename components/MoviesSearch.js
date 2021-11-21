@@ -33,10 +33,10 @@ const MoviesSearch = (props) => {
                     placeholder="Search by movie name"    
                 />
             </form>
-            { searchedMovie && <div>
-                <h3> Searched Movie </h3> 
+            { searchedMovie ? <div>
+                {/* <h3> Searched Movie </h3>  */}
                 <h4> { searchedMovie.title } - { searchedMovie.rating } </h4> 
-            </div> }
+            </div> : null }
         </div>
     )
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { removeMovie } from '../actions/moviesAction'
 import { useDispatch, useSelector } from 'react-redux'
+import { Card, Button } from 'react-bootstrap'
+
 
 const MovieCard = (props) => {
 
@@ -58,6 +60,7 @@ const MovieCard = (props) => {
     
     return (
         <div>
+            <div>
             <form onSubmit = { handleSubmit }>
                 <select value = { selectOrder } onChange = { handleSelect }>
                     <option value = "orderBy"> order by </option>
@@ -67,14 +70,30 @@ const MovieCard = (props) => {
                     <option value = "descendingRating" > Ranking ( Low - High ) </option>
                 </select>
             </form>
+            </div>
+            <hr/>
+            <div className="row">
             { movies.map((movie)=>{
-                return <div key = { movie.id }>
-                    <img src={ movie.image } height="200" width="150"/>
-                    <h4> { movie.title.toUpperCase() } </h4>
-                    <h5> # { movie.rating } </h5>
-                    <button onClick = {()=>{ handleRemove(movie.id)} }> remove </button>
+               return <div className="col-3">
+               <Card className="box" style={{ width: '11rem' }}>
+                <Card.Img className="card-img-top" variant="top" src={ movie.image } height="150" width="100" />
+                <Card.Body>
+                  <Card.Title className="movieCard">{ movie.title }</Card.Title>
+                  <Card.Text className="movieCard">  # { movie.rating } </Card.Text>
+                  <Button className="movieButton" variant="primary"
+                    onClick = {()=>{ handleRemove(movie.id)} } > remove </Button>
+                </Card.Body>
+              </Card>
+                {/* // return <div key = { movie.id }>
+                //     <img src={ movie.image } height="150" width="100"/>
+                //     <p className="text-capitalize font-weight-bold"> { movie.title } </p>
+                //     <p className=""> # { movie.rating }   
+                //         <button className="bg-warning" onClick = {()=>
+                //         { handleRemove(movie.id)} }> remove </button>
+                //     </p> */}
                 </div>
             }) }
+            </div>
         </div>
     )
 }

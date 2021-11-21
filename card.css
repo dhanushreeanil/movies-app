@@ -1,0 +1,14 @@
+body{
+    background-color: lightgray;
+}
+
+.heading {
+    background-color:#151515;
+    color:white;
+    padding: 10px;
+    text-align: center;
+}
+
+.movieButton{
+    background-color:#d83b3b;
+}
